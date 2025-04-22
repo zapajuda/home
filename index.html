@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluções Financeiras para Aposentados e Pensionistas do INSS</title>
+    <style>
+        :root {
+            --cor-primaria: #0066cc;
+            --cor-secundaria: #e6f0ff;
+            --cor-texto: #333333;
+            --cor-destaque: #ff9900;
+            --cor-fundo: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: #004d99;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .hero {
+            background-color: var(--cor-secundaria);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--cor-primaria);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+        }
+        
+        .servicos {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .titulo-secao {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--cor-primaria);
+            position: relative;
+        }
+        
+        .titulo-secao::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--cor-destaque);
+            margin: 0.5rem auto;
+        }
+        
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: var(--cor-secundaria);
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 1rem;
+        }
+        
+        .vantagens {
+            background-color: #f9f9f9;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .vantagens-lista {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .vantagem-item {
+            width: 250px;
+            padding: 1rem;
+        }
+        
+        .vantagem-item h3 {
+            color: var(--cor-primaria);
+            margin-bottom: 0.5rem;
+        }
+        
+        .sobre {
+            padding: 3rem 1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contato {
+            background-color: var(--cor-secundaria);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .contato-info {
+            margin-bottom: 2rem;
+        }
+        
+        .form-contato {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .form-grupo {
+            margin-bottom: 1rem;
+        }
+        
+        .form-grupo label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-grupo input,
+        .form-grupo textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-grupo textarea {
+            height: 150px;
+        }
+        
+        footer {
+            background-color: var(--cor-primaria);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .cards, .vantagens-lista {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">CredFácil INSS</div>
+        <p>Soluções financeiras para aposentados e pensionistas</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#vantagens">Vantagens</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <h1>Empréstimo Consignado para Aposentados e Pensionistas do INSS</h1>
+        <p>Soluções financeiras com as melhores taxas do mercado e aprovação rápida. Atendimento personalizado e transparente para ajudar você a realizar seus sonhos.</p>
+        <a href="#contato" class="btn">Solicite uma Simulação Gratuita</a>
+    </section>
+    
+    <section id="servicos" class="servicos">
+        <h2 class="titulo-secao">Nossos Serviços</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Empréstimo Consignado INSS</h3>
+                <p>Empréstimo com desconto direto na folha de pagamento com as menores taxas do mercado e parcelas que cabem no seu orçamento.</p>
+            </div>
+            <div class="card">
+                <h3>Cartão de Crédito Consignado</h3>
+                <p>Cartão com limite pré-aprovado e desconto mínimo mensal diretamente no benefício, com taxas reduzidas.</p>
+            </div>
+            <div class="card">
+                <h3>Refinanciamento de Empréstimos</h3>
+                <p>Reduza o valor de suas parcelas unificando seus empréstimos atuais e obtendo melhores condições.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="vantagens" class="vantagens">
+        <h2 class="titulo-secao">Vantagens dos Nossos Serviços</h2>
+        <div class="vantagens-lista">
+            <div class="vantagem-item">
+                <h3>Menores Taxas</h3>
+                <p>Trabalhamos com as menores taxas de juros do mercado para empréstimo consignado.</p>
+            </div>
+            <div class="vantagem-item">
+                <h3>Aprovação Rápida</h3>
+                <p>Processo simplificado com resposta em até 24 horas.</p>
+            </div>
+            <div class="vantagem-item">
+                <h3>Sem Consulta SPC/Serasa</h3>
+                <p>Aprovação garantida mesmo com restrições no CPF.</p>
+            </div>
+            <div class="vantagem-item">
+                <h3>Atendimento Personalizado</h3>
+                <p>Atendimento humanizado pensando no melhor para você.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre" class="sobre">
+        <h2 class="titulo-secao">Sobre Nós</h2>
+        <p>A CredFácil INSS é especializada em empréstimos consignados para aposentados e pensionistas do INSS. Com anos de experiência no mercado financeiro, nosso compromisso é oferecer as melhores condições, com transparência e responsabilidade.</p>
+        <p>Nossa equipe é formada por profissionais qualificados que irão te auxiliar em cada etapa do processo, garantindo que você faça a melhor escolha para sua necessidade.</p>
+    </section>
+    
+    <section id="contato" class="contato">
+        <h2 class="titulo-secao">Entre em Contato</h2>
+        <div class="contato-info">
+            <p>Estamos à disposição para tirar suas dúvidas e fazer uma simulação personalizada.</p>
+            <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+            <p><strong>E-mail:</strong> contato@credfacilinss.com.br</p>
+            <p><strong>Endereço:</strong> Rua Nome da Rua, 123 - Bairro, Cidade - Estado</p>
+        </div>
+        
+        <form class="form-contato">
+            <div class="form-grupo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-grupo">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-grupo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-grupo">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+    </section>
+    
+    <a href="https://wa.me/5500000000000" class="whatsapp-float">
+        Fale pelo WhatsApp
+    </a>
+    
+    <footer>
+        <p>&copy; 2025 CredFácil INSS - Todos os direitos reservados</p>
+        <p>Empréstimo sujeito à aprovação. Este site não é associado ao INSS ou qualquer órgão governamental.</p>
+    </footer>
+</body>
+</html>
