@@ -347,7 +347,7 @@
                 <label for="mensagem">Mensagem:</label>
                 <textarea id="mensagem" name="mensagem"></textarea>
             </div>
-            <button type="submit" class="btn">Enviar Mensagem</button>
+            <button type="button" class="btn">Enviar Mensagem</button>
         </form>
     </section>
     
@@ -360,5 +360,44 @@
         <p><a href="https://www.guicloud.com.br/">Desenvolvido por Guicloud</a> - &copy;</p>
         <p>Empréstimo sujeito à aprovação. Este site não é associado ao INSS ou qualquer órgão governamental.</p>
     </footer>
+<button type="button" class="btn" onclick="enviarWhatsApp()">Enviar Mensagem</button>
+
+<script>
+function enviarWhatsApp() {
+    // Obtém os valores dos campos
+    var nome = document.getElementById('nome').value;
+    var telefone = document.getElementById('telefone').value;
+    var email = document.getElementById('email').value;
+    var mensagem = document.getElementById('mensagem').value;
+    
+    // Verifica se os campos obrigatórios estão preenchidos
+    if (nome === '' || telefone === '') {
+        alert('Por favor, preencha seu nome e telefone.');
+        return;
+    }
+    
+    // Monta a mensagem para o WhatsApp
+    var texto = "Olá, meu nome é " + nome + ". ";
+    texto += "Meu telefone é " + telefone + ". ";
+    
+    if (email !== '') {
+        texto += "Meu e-mail é " + email + ". ";
+    }
+    
+    if (mensagem !== '') {
+        texto += "Mensagem: " + mensagem;
+    }
+    
+    // Codifica a mensagem para URL
+    var textoCodeado = encodeURIComponent(texto);
+    
+    // Número do WhatsApp (substitua pelo seu número com código do país)
+    var numeroWhatsApp = "5518991585167";
+    
+    // Cria o link do WhatsApp e redireciona
+    var linkWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + textoCodeado;
+    window.open(linkWhatsApp, '_blank');
+}
+</script>
 </body>
 </html>
